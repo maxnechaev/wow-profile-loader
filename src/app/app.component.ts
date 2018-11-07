@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { CharactersComponent } from "./characters/characters.component";
 
 @Component({
   selector: 'app-root',
@@ -7,6 +6,6 @@ import { CharactersComponent } from "./characters/characters.component";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'WoW Profile Loader App';
+  title = 'WoW Profile Loader';
 
 }

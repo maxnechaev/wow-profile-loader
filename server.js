@@ -1,4 +1,4 @@
-// curl -u 4910b7e00751425880423678c4163ca7:9LUC6zGWd8kheDOwp64jtzOVwGNbCi7N -d grant_type=client_credentials https://us.battle.net/oauth/token
+// curl -u 4910b7e00751425880423678c4163ca7:9LUC6zGWd8kheDOwp64jtzOVwGNbCi7N -d grant_type=client_gameServers https://us.battle.net/oauth/token
 // {"access_token":"USIf4v8KAQ36yAtV2qJi8PnhJbs3v9b3kb","token_type":"bearer","expires_in":86399}
 //
 // https://eu.api.blizzard.com/wow/user/characters?locale=en_US&access_token=USMiKhB8DDn0tSf9o9k5z0yLbGXfW2LTC5

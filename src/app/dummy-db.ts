@@ -1,6 +1,6 @@
 // GET - /wow/user/characters
 {
-  "characters": [
+  [
     {
       "name": "Синийбомж",
       "realm": "Borean Tundra",

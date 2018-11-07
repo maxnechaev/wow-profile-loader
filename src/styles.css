@@ -1,4 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
-html {
-  background-color: #140D4F;
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+body {
+  background-color: #3B0800;
+  margin-top: 5%;
+  padding-left: 20%;
+  padding-right: 20%;
+  text-align: center;
+  display: inline-flex;
 }

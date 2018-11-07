@@ -1,18 +1,19 @@
 /* Application-wide Styles */
 
 h1 {
-  color: #369;
-  font-family: sans-serif, Arial, Helvetica;
+  color: #FAE96E;
+  /* EDDA9E */
+  font-family: 'MedievalSharp', cursive, sans-serif, Arial, Helvetica;
   font-size: 250%;
 }
 h2, h3 {
-  color: #2DD881;
+  color: #FE936F;
   font-family: sans-serif, Arial, Helvetica;
-  font-weight: lighter;
+  margin: 5%;
+  /* font-weight: lighter; */
 }
 body {
   margin: 2em;
-
 }
 body, input[type="text"], button {
   color: #888;
@@ -21,4 +22,21 @@ body, input[type="text"], button {
 /* everywhere else */
 * {
   font-family: sans-serif, Arial, Helvetica;
+}
+
+.authorization {
+  margin: 10px;
+  padding: 10px;
+}
+
+section {
+  margin-bottom: 2em;
+}
+
+input {
+    border-radius: 5px;
+}
+
+.auth-btn {
+  background-color: #A88376;
 }
