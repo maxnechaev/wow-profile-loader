@@ -7,12 +7,14 @@ h1 {
   font-size: 250%;
 }
 h2, h3 {
+  text-align: center;
   color: #FE936F;
   font-family: sans-serif, Arial, Helvetica;
   margin: 5%;
   /* font-weight: lighter; */
 }
 body {
+  background-color: #3B0800;
   margin: 2em;
 }
 body, input[type="text"], button {
@@ -31,12 +33,15 @@ body, input[type="text"], button {
 
 section {
   margin-bottom: 2em;
+  text-align: center;
 }
 
 input {
-    border-radius: 5px;
+  border-radius: 5px;
 }
 
-.auth-btn {
+button {
   background-color: #A88376;
+  color: black;
+  border-radius: 5px;
 }

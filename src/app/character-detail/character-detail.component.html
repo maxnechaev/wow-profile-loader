@@ -1,21 +1,176 @@
-<div *ngIf="character">
-  Details of
-  <h2>{{character.name | uppercase}} </h2>
+<div *ngIf="character" class="description-container">
+  <h2>{{character.name | uppercase}}</h2>
+  <p>{{character.level}} level</p>
+
+  <div class="container content">
+    <div class="row">
+      <!-- beginning of the 1st col -->
+      <div class="col-md-10">
+        <img
+          src="http://render-eu.worldofwarcraft.com/character/{{character.thumbnail}}"
+          title="{{character.classTitle}}"
+        />
+      </div>
+      <!-- end of the 1st column -->
+
+      <!-- beginning of the 2nd col -->
+      <div class="col-md-2">
+        <div id="spec">
+          <img
+            src="https://wow.zamimg.com/images/wow/icons/large/{{character.spec.icon}}.jpg"
+            title="{{character.spec.icon}}"
+          />
+        </div>
+
+        <!-- TODO: refactor below! -->
+        <div id="gender">
+          <div *ngIf="character.gender == 0">
+            <img
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAO4SURBVGhD7ZlPSFRRFMZHrawoDfoDJklBq0iyVi0Miha1CmxR4CJoYYELCSKigiwqqF1b0coWumlTCeU2CrIIrE1UEGaBRFJg+Ce1xn733s/JmXFm3vjuOBPMDz7eO/ec+517GN84jpEiRYoUDjMzM/UoNNFotEuW+YEzFAeZS94H4QC70Y+AGtG5kyCX30GCwlmXcNh77tjJ/BeDcM60QxgKfhDOOO8QrE3o1lLQg3C+VEO8Ri0KLQU7CGdLOQSXdVwb3YqjIAfhXGmHMDUFPwhnyjiEYdEGwbgC/xoUa54JagMNYcjZIBhtRCdRL/oufwvxNPqI7qBGtELbYlAWeAiD8XEVDuJwg2CwFXWjP/LMCLXD6AqqMB4spRqin8u8ryg5P4Owt4zN19Cks8oe9n5Bh1BWQxjIhx+EfZVsfOws5of8BBpEQ+i3lgNBfdohDNSEG4Q9Zog3bns8rD9B5jnZpHILKfPq7eJ6ieugLU4B+YxDGKhb+CDUmwP1uK3/YO0tOqCytFBXjk6jUW2PwdoAl4xDGKg9SO2rWRFfVSozFLeyKQ7WetBqlQSGrXXs++RcHMRTqFYluYEG1WhMPS3Ej7iUqSRr2FuDxzdrJohfcClRiX9o0OFaOYg/cKlUesHgUY9X3Fs3caAf06zB2zzgv1wbB/FhpUOD113ZWoh7lfILxkfVw0Js3lm8vfz4bUGxV8Xco7VK+wPTbvWwEJ9Tyht49sneQtyglD8wfSd/C/EOpbyB50XZz3JdKX/QJO7PSgj9kCdCj2PythDfVsoPeJY4awcNxpXyCr771cJC/FApf8jbQoMol6VKeQPbBtfBQXxfKX9g+lX+FuJqpbyBZ7PsLcTtSvkD06fytxB7+x0yC7adzt1BjzNK+QPTxM9YnUp5AT/zYTTxr8qdSvsD3zpn76DJKKpSOjR4Jb5jDSjlH8zfq4+FuE2pUGC1HK/ET8E3lPYP5kfUx0JsCP2sYJX4bIyg9Ur7hx4lNHjp2jmIx9AelWQNey/LKgZr55XOHTSpRT/V00I8iZq4DfwhktpV7OmyBnNgrQ+Vqyy30Mh865H01Q9rz9E+bktVmgS5ldQ0oyG7aQ6smW9UvL2BBIKGTWhKZ4jDHBJ1oLPIvBud4NqKHqBxVxUP65/RdtkvLvTfS/Nhd5SFg8cztEG2+YEDVKFbaFrnCgx7zLeNp7hdJrv8w4G2oTaU9LOfCDX96AK3a7S98OBwpRzS/Je2Bd1E7cgMaL5aPU5+s0qLFCmSdyKRv8ubh7kX1H7jAAAAAElFTkSuQmCC"
+              title="Female"
+            >
+          </div>
+          <div *ngIf="character.gender == 1">
+            <img
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAN4SURBVGhD7ZlLSFRRGMdHSZuScGMvAntsIkqINlYgCNUmiUgCsUVBEEFQhBEaPVbRA4oIAivIRUlI6za1KKLHokVFQbUJDCsXSgoqYejU75zz93Gn0eZxZuYK9wd/7nzn++7/+w7j3Jl7jUWkIJFILEC70B30Dv38AxxH0Q/0FJ1FNTolXDBrFcNdQyNm8HSg9hNq4mWJbIqHGYJhWtCAnS4LOPc1h42yLDw0jzPEfTvNLFAzrpczQs0QapR14aD3Qhq/dGMEYf0zOo82o6UslaA4WkW8F3WiIVM7HdYMh9Ui/9DT/Dl1ufZTsNaDDvCyVKUzQt1y1I4C7xbxGNqhsvxCvzbXdgqav0BLVJI2nLMbJb87g6haJfmBBstoPGzbCeJnaL5KMoZza9Ev2VmIO5XODzRoVy8LcTdarHTW4LFflhZiwyal/YJ/Jea/XSsHcZPSOYPXE9laiO8q5ReM96mHhfgtB29fZvhtcc4OYvOroExpf2D6wHYQNGpVyht4fpG9hXibUv7AtFv+FuL1SnkDz+uytxCfUsoPeJZimnzNz/pKNRN4HpW9hfi2Un7As9JZO2jQr5RX8G1UCwtxl1J+wLPcWTtoMKyUV/BtVgsLcYdS/sC0X/4W4kVKeQPPFtlbiC8q5Q9M38vfQlynlDfw7JS9hfiIUv7ANPmKckUpL2BZhqe9o5yA2P+dJKYN8rcQm1vXCqVzBq/kz8dXpfyCt7mR6nVtHMRnlM4JrMrxCnwZwiWl/UOzE2piIR5BtUpnDR43ZGmRb8a3BWmDeQX6pn4W4h4Oa1SSMZx/zDkFyN+7MQFN6mk+5vo5iPs41KskLaifx3mBC4iBtTfI+6+GlNDonPpOwto4uodWqiwllJpb5T3oozszwCDra1VaGGh4Qc0DsG429AqdRs2oDu1EB9FN9F2lAVjvQ/m5mfofND6ORjVL1uBhHtatk21xYIANyDxkyxjOM09NLvMyLrviwiDmZ34DeowSdspZoGQAXUWrZRE+mNM8aTEf5g43toO4F7WiragwVyUfMGyN9mAhfq7U3CLaSNiYUxthPvOUfXsqMfghjpMQf+CQshYV7/8jBgaoRjnDJh/KsjgwQ7SR6YRhI1XIPEr9Rwz3iOMkxOanfspa1CbL8MHg0eU3VEQbCRvRRsIGg69At6bppFIREXOHWOwv7XpM5c+ZA1YAAAAASUVORK5CYII="
+              title="Male"
+            >
+          </div>
+        </div>
+      </div>
+      <!-- end of the 2nd column -->
+
+      <!-- <img src="{{character.iconAddress}}" title="{{character.classTitle}}"> -->
+      </div>
+    </div>
+
+    <!-- beginning of details -->
+    <div class="row">
+      <span>Class: </span>&nbsp;
+      <span *ngIf="character.class == 1">Warrior</span>
+      <span *ngIf="character.class == 2">Mage</span>
+      <span *ngIf="character.class == 9">Warlock</span>
+      <span *ngIf="character.class == 4">Shaman</span>
+      <span *ngIf="character.class == 5">Death Knight</span>
+      <span *ngIf="character.class == 6">Druid</span>
+      <span *ngIf="character.class == 7">Monk</span>
+      <span *ngIf="character.class == 8">Hunter</span>
+      <span *ngIf="character.class == 3">Paladin</span>
+      <span *ngIf="character.class == 10">Priest</span>
+      <span *ngIf="character.class == 11">Rogue</span>
+      <span *ngIf="character.class == 12">Demon Hunter</span>
+      {{character.class}}
+      <!-- <img src="{{character.iconAddress}}" title="{{character.classTitle}}"> -->
+    </div>
+
+    <div class="row">
+      <span>Race: </span>&nbsp;
+      <span *ngIf="character.race == 1">Human</span>
+      <span *ngIf="character.race == 2">Orc</span>
+      <span *ngIf="character.race == 3">Dwarf</span>
+      <span *ngIf="character.race == 4">Night Elf</span>
+      <span *ngIf="character.race == 5">Undead</span>
+      <span *ngIf="character.race == 6">Tauren</span>
+      <span *ngIf="character.race == 7">Gnome</span>
+      <span *ngIf="character.race == 8">Troll</span>
+      <span *ngIf="character.race == 9">Goblin</span>
+      <span *ngIf="character.race == 10">Blood Elf</span>
+      <span *ngIf="character.race == 11">Draenei</span>
+      <span *ngIf="character.race == 22">Worgen</span>
+      <span *ngIf="character.race == 24">Pandaren</span>
+      <span *ngIf="character.race == 25">Pandaren</span>
+      <span *ngIf="character.race == 26">Pandaren</span>
+      <span *ngIf="character.race == 27">Nightborne</span>
+      <span *ngIf="character.race == 28">Highmountain Tauren</span>
+      <span *ngIf="character.race == 29">Void Elf</span>
+      <span *ngIf="character.race == 30">Lightforged Draenei</span>
+      <span *ngIf="character.race == 34">Dark Iron Dwarf</span>
+      <span *ngIf="character.race == 36">Mag'har Orc</span>
+      {{character.race}}
+      <!-- <img src="{{character.iconAddress}}" title="{{character.classTitle}}"> -->
+    </div>
+
+    <div class="row">
+      <div>
+        <span>Achievement Points: </span>
+        {{character.achievementPoints}}
+      </div>
+    </div>
+
+    <div class="row">
+      <div>
+        Specialization: {{character.spec.name}} - {{character.spec.role}}
+      </div>
+    </div>
+
+    <div class="row">
+      <div>
+        <span>Realm: </span>
+        {{character.realm}}
+      </div>
+    </div>
+
+    <div *ngIf="hasProp(character, 'guild')" class="row">
+      <div>
+        <span>Guild: </span>
+        {{character.guild}}
+      </div>
+    </div>
+
+    <div *ngIf="hasProp(character, 'guild')" class="row">
+      <div>
+        <span>Guild Realm: </span>
+        {{character.guildRealm}}
+      </div>
+    </div>
+
+    <br><br>
+
+    <div class="row">
+      <div>
+        <span>Last updated:
+          {{character.lastModified | date:'long'}}
+        </span>
+      </div>
+    </div>
+    <!-- end of details -->
+
+  <br><br><br><br>
 
   <div>
-    <span>id: </span>
-    {{character.id}}
-  </div>
+    <section>
+      <h3>More about such characters:</h3>
+      <div>
+        <img src="../../assets/TalentFrame/{{character.spec.backgroundImage}}.png" title="{{character.spec.backgroundImage}}" />
+      </div>
 
-  <div>
-    <span>name: </span>
-    {{character.name}}
-  </div>
-
-  <div>
-    <span>class: </span>
-    {{character.classTitle}}
-    <img src="{{character.iconAddress}}" title="{{character.classTitle}}">
+      <div>
+        <span>Description: </span>
+        {{character.spec.description}}
+      </div>
+    </section>
   </div>
 
 </div>
+<!--
+
+name: string;
+realm: string;
+battlegroup: string;
+class: number;
+race: number;
+gender: number;
+level: number;
+achievementPoints: number;
+thumbnail: string;
+spec: {
+  name: string;
+  role: string;
+  backgroundImage: string;
+  icon: string;
+  description: string;
+  order: number
+};
+guild: string;
+guildRealm: string;
+lastModified: number; -->
