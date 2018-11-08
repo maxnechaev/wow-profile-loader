@@ -5,3 +5,8 @@ h2, p, div {
 input {
   color: black;
 }
+
+.description-container {
+  text-align: center;
+  max-width: 300px;
+}
