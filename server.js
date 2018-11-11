@@ -25,10 +25,6 @@ function getProfile(region, locale, TOKEN, cb) {
    headers: {
      "User-Agent": "request",
      'Authorization': 'USMiKhB8DDn0tSf9o9k5z0yLbGXfW2LTC5',
-     // 'BNET_ID': '4910b7e00751425880423678c4163ca7',
-     // 'BNET_SECRET': '9LUC6zGWd8kheDOwp64jtzOVwGNbCi7N',
-     // 'WOW_AUTHORIZE_URI': 'https://eu.battle.net/oauth/authorize',
-     // 'WOW_TOKEN_URI': 'https://eu.battle.net/oauth/token',
    }
  };
 
