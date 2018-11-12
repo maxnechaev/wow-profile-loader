@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Character } from '../character';
-import { CHARACTERS } from '../mock-chars';
+import { Component, OnInit, Input } from '@angular/core';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-characters',
@@ -8,15 +7,18 @@ import { CHARACTERS } from '../mock-chars';
   styleUrls: ['./characters.component.css']
 })
 export class CharactersComponent implements OnInit {
-  characters = CHARACTERS;
-  selectedCharacter: Character;
-  onSelect(character: Character): void {
+
+  @Input() character;
+
+  selectedCharacter;
+  onSelect(character): void {
   this.selectedCharacter = character;
 }
 
-  constructor() { }
+  constructor(private api: ApiService) { }
 
   ngOnInit() {
+    this.api.getCharacters()
   }
 
 }

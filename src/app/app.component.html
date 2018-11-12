@@ -1,23 +1,24 @@
 <div style="text-align:center">
-  <h1>{{ title }}</h1>
+  <h1>{{ title }} </h1>
   <img width="300" alt="WoW logo" src="src/assets/world-of-warcraft-logo.svg">
 </div>
-<h3>Please enter your BattleNet ID and choose server below:</h3>
+<h2>Please enter your BattleNet ID and choose server below:</h2>
 
 <section>
-  <div class="authorization d-flex justify-content-between">
-    <input class="col-md-6" type="text" name="username" placeholder="your BattleNet Id...">
-    <app-gameServers class="col-md-6"></app-gameServers>
-  </div>
-  <button class="auth-btn col-md-4" type="button" name="Authorize">Authorize</button>
+  <form action="/login" method="POST">
+    <div class="authorization d-flex justify-content-between">
+      <input class="col-md-6" type="text" name="username" placeholder="your BattleNet Id...">
+      <app-gameServers class="col-md-6"></app-gameServers>
+    </div>
+    <input class="auth-btn col-md-4" type="submit" value="Authorize">
+  </form>
 </section>
-
 
 <app-characters></app-characters>
 
-<div align="center" style="font-size: 9px; margin-top: 20px; font-family: sans-serif; color: white">
+<footer>
   "WoW Profile Loader" (or wow-profile-loader) uses names and images from World of Warcraft,
   and data proprietary to Blizzard Entertainment, Inc.
   <br>World of Warcraft, Warcraft and Blizzard Entertainment are trademarks
   or registered trademarks of Blizzard Entertainment, Inc. in the U.S. and/or other countries.
-</div>
+</footer>

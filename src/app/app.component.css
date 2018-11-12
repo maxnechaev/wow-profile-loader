@@ -1,27 +1,21 @@
-/* Application-wide Styles */
 
 h1 {
   color: #FAE96E;
-  /* EDDA9E */
   font-family: 'MedievalSharp', cursive, sans-serif, Arial, Helvetica;
-  font-size: 250%;
+  font-size: 300%;
 }
 h2, h3 {
   text-align: center;
-  color: #FE936F;
+  color: #fff;
+  text-shadow: 2px 3px #11396b;
   font-family: sans-serif, Arial, Helvetica;
   margin: 5%;
-  /* font-weight: lighter; */
 }
+
 body {
-  background-color: #3B0800;
   margin: 2em;
 }
-body, input[type="text"], button {
-  color: #888;
-  font-family: sans-serif, Cambria, Georgia;
-}
-/* everywhere else */
+
 * {
   font-family: sans-serif, Arial, Helvetica;
 }
@@ -40,8 +34,18 @@ input {
   border-radius: 5px;
 }
 
-button {
-  background-color: #A88376;
-  color: black;
+.auth-btn {
+  background-color: #3e5f789c;
+  color: #fff;
   border-radius: 5px;
+}
+
+footer {
+  font-size: 10px;
+  font-family: sans-serif;
+  margin: auto;
+  margin-top: 70px;
+  margin-bottom: 20px;
+  color: #fff;
+  text-align: center;
 }

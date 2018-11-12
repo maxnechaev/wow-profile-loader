@@ -1,23 +1,24 @@
 
-  <!-- <h2>List of my characters</h2> -->
-  <h2>Currently you have {{characters.length}} characters</h2>
+  <h2>Currently you have {{(this.api.characters.characters || '').length}} characters</h2>
   <p><em>click on a character to see the details</em></p>
-  <div class="d-flex justify-content-between">
+  <div class="d-flex w-100 justify-content-between">
 
-    <ul class="characters">
-      <li *ngFor="let character of characters"
+    <ul class="characters p-2 h-100 justify-content-center align-items-center">
+      <li *ngFor="let character of this.api.characters.characters"
       [class.selected]="character === selectedCharacter"
       (click)="onSelect(character)">
-      <span class="badge">
-        <!-- TODO: change 'eu' to dynamic -->
-        <img
-          src="http://render-eu.worldofwarcraft.com/character/{{character.thumbnail}}"
-          alt="avatar of {{character.classTitle}}"
-          title="avatar of {{character.classTitle}}"
-          >
-      </span> {{character.name}}
-    </li>
-  </ul>
+        <span class="badge align-middle">
+          <!-- TODO: change 'eu' to dynamic -->
+          <img
+            src="http://render-eu.worldofwarcraft.com/character/{{character.thumbnail}}"
+            alt="avatar of {{character.classTitle}}"
+            title="avatar of {{character.classTitle}}"
+            >
+        </span> {{character.name}}
+      </li>
+    </ul>
 
-  <app-character-detail [character]="selectedCharacter"></app-character-detail>
+    <app-character-detail [character]="selectedCharacter"></app-character-detail>
   </div>
+
+  <app-class-description [character]="selectedCharacter"></app-class-description>

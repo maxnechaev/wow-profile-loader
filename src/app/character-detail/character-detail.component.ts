@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Character } from '../character';
 
 @Component({
   selector: 'app-character-detail',
@@ -8,24 +7,14 @@ import { Character } from '../character';
 })
 export class CharacterDetailComponent implements OnInit {
 
-  @Input() character: Character; // TODO: consider using @Input here
+  @Input() character ; 
 
   hasProp(obj, prop) {
     return obj.hasOwnProperty(prop);
   }
-  // // Step 1. Get all the object keys.
-  // let evilResponseProps = Object.keys(evilResponse);
-  // // Step 2. Create an empty array.
-  // let goodResponse = [];
-  // // Step 3. Iterate throw all keys.
-  // for (prop of evilResponseProps) {
-  //     goodResponse.push(evilResponseProps[prop]);
-  // }
-
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
 }

@@ -1,0 +1,18 @@
+<div *ngIf="character" class="description-container">
+  <section>
+    <h3>More about such characters:</h3>
+    <div>
+      <img
+        class="rounded border border-light"
+        src="../../assets/TalentFrame/{{character.spec.backgroundImage}}.png"
+        title="{{character.spec.backgroundImage}}"
+      />
+    </div>
+
+    <div>
+      <span>Description:
+        {{character.spec.description}}
+      </span>
+    </div>
+  </section>
+</div>
