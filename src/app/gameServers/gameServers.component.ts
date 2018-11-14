@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-gameServers',
@@ -8,8 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class GameServersComponent implements OnInit {
 
-  name = 'Angular 6';
-  ipAddress: any;
+  ipUrl = 'https://jsonip.com';
 
   gameServers = [
     'United States (US)',
@@ -17,14 +16,9 @@ export class GameServersComponent implements OnInit {
     'Asia-Pacific (APAC)'
   ];
 
-  constructor(private http: HttpClient){
-    this.http.get<{ip:string}>('https://jsonip.com')
-    .subscribe( data => {
-      console.log('th data', data);
-      this.ipAddress = data
-    })
+  constructor(private api: ApiService) { }
+
+  ngOnInit() {
+    this.api.getData(this.ipUrl)
   }
-
-  ngOnInit() { }
-
 }

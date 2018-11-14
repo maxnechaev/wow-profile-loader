@@ -3,10 +3,19 @@
   <img width="300" alt="WoW logo" src="src/assets/world-of-warcraft-logo.svg">
 </div>
 <h2>Please enter your BattleNet ID and choose server below:</h2>
-
+<h4>
+  <a href="https://eu.api.blizzard.com/wow/user/characters?access_token=USYGuPjU8c801TfUhVg1dQM5ghYFr1BVCR">
+  Link to json object
+</a></h4>
 <section>
   <form action="/login" method="POST">
     <div class="authorization d-flex justify-content-between">
+
+            <!-- Blizzard's magic should happen here below -->
+            <input type="hidden"
+                 name="WOW_TOKEN"
+                 value="${token_type}"/>
+
       <input class="col-md-6" type="text" name="username" placeholder="your BattleNet Id...">
       <app-gameServers class="col-md-6"></app-gameServers>
     </div>

@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
+import { OAuthModule } from 'angular-oauth2-oidc';
 
 import { AppComponent } from './app.component';
 import { CharactersComponent } from './characters/characters.component';
@@ -17,7 +18,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     CharactersComponent,
     CharacterDetailComponent,
     GameServersComponent,
-    ClassDescriptionComponent
+    ClassDescriptionComponent,
+    // HomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -25,7 +27,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpModule,
     ReactiveFormsModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    OAuthModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
