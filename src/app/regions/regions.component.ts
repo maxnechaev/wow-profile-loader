@@ -1,6 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
-import { NgForm } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
+import { authData } from './authData'
 
 @Component({
   selector: 'app-regions',
@@ -9,15 +10,13 @@ import { NgForm } from '@angular/forms';
 })
 export class RegionsComponent implements OnInit {
   submitObj: any = {};
-  selectedRegion: string;
-
-  onSubmit(form : NgForm) {
-    this.submitObj = form
-    // console.log('array', this.arr);
-    console.log('value', form.value);
-   }
 
   ipUrl = 'https://jsonip.com';
+
+  profileForm = new FormGroup({
+    battleNetId: new FormControl(''),
+    selectedRegion: new FormControl(''),
+  });
 
   regions = [
     {name: 'United States (US)', value: 'us'},
@@ -25,10 +24,18 @@ export class RegionsComponent implements OnInit {
     {name: 'Asia-Pacific (APAC)', value: 'apac'},
   ]
 
+  model = new authData(undefined, null);
+
+  submitted = false;
+
+  onSubmit() {
+    this.submitted = true;
+
+   }
+
   constructor(private api: ApiService) { }
 
   ngOnInit() {
     this.api.getData(this.ipUrl)
-    this.api.onSubmit(this.submitObj);
   }
 }

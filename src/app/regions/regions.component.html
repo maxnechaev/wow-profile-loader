@@ -1,23 +1,110 @@
-<section>
-  <form class="" (ngSubmit)="onSubmit(f)" #f="ngForm" method="POST">
+<div class="container">
+  <div [hidden]="submitted" class="col-md-12">
+
+    <form (ngSubmit)="onSubmit()" #profileForm="ngForm">
+      <h2>Please enter your BattleNet ID and choose server below:</h2>
+      <div class="row">
+        <div class="form-group col-md-6">
+
+          <input type="text" class="form-control" id="battleNetId" required [(ngModel)]="model.battleNetId" name="battleNetId" #battleNetId="ngModel" placeholder="your BattleNet ID">
+          <div [hidden]="battleNetId.valid || battleNetId.pristine" class="alert alert-danger">
+            BattleNet ID is required
+          </div>
+        </div>
+
+        <div class="form-group col-md-6">
+          <select class="form-control" id="region" required [(ngModel)]="model.region" name="region" #region="ngModel">
+
+            <option selected disabled>Choose your Game Server</option>
+            <option *ngFor="let region of regions" [value]="region.value">{{region.name}}</option>
+          </select>
+          <div [hidden]="region.valid || region.pristine" class="alert alert-danger">
+            Please choose Game Server
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group col-md-12">
+          <button type="submit" class="btn btn-block" [disabled]="!profileForm.form.valid">
+            Authorize
+        </button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+
+  <div [hidden]="!submitted" class="container col-md-12">
+    <div class="row">
+      <div class="col-md-12">
+        <h2>You are authorized with the following credentials:</h2>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <h4>
+          BattleNet ID: {{ model.battleNetId }}
+        </h4>
+      </div>
+      <div class="col-md-6 col-md-offset-1">
+        <h4>
+          Game Server: {{ model.region }}
+        </h4>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-md-12">
+        <button class="btn btn-block" (click)="submitted=false; profileForm.reset()">Reset and view another profile</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+<!-- <section>
+  <form (ngSubmit)="onSubmit()" [formGroup]="profileForm">
 
     <div class="d-flex justify-content-between">
+
+      <div class="form-group">
       <input
-        class="authorization
-        form-control col-md-6"
+        formControlName="battleNetId"
+        id="battleNetId"
+        class="authorization form-control col-md-5"
         type="text"
         name="battleNetId"
-        placeholder="your BattleNet Id..."
+        placeholder="your BattleNet ID"
         ngModel
         required>
 
+        <div [hidden]="battleNetId.valid"
+             class="alert alert-danger">
+          BattleNet ID is required
+        </div>
+
+
+        </div>
+
       <select
-        class="authorization form-control col-md-6"
+        formControlName="selectedRegion"
+        class="authorization form-control col-md-5 col-md-offset-2"
         name="region"
         [(ngModel)]="selectedRegion"
+        data-toggle="tooltip"
+        data-trigger="hover"
+        data-placement="top"
+        title="Your IP address is {{this.ipUrl.ip}}"
         required>
 
-        <option selected disabled>
+        <option selected disabled [ngValue]="undefined">
           Choose your Game Server
         </option>
 
@@ -27,15 +114,21 @@
 
       </select>
 
+
+
     </div>
 
     <input
       class="auth-btn col-md-4"
       type="submit"
+      [disabled]="!profileForm.valid"
       value="Authorize"
       data-toggle="tooltip"
       data-trigger="hover"
       data-placement="top"
       title="Authorize using Blizzard OAuth">
+
+      <div>{{ profileForm.status }} CREDENTIALS</div>
+
   </form>
-</section>
+</section> -->

@@ -1,20 +1,64 @@
+.container {
+  text-align: center;
+  margin-bottom: 50px;
+}
 
 .authorization {
-  margin: 10px;
   padding: 10px;
 }
 
-section {
-  margin-bottom: 2em;
-  text-align: center;
-}
 
 input {
   border-radius: 5px;
 }
 
-.auth-btn {
-  background-color: #3e5f789c;
+.ng-valid[required], .ng-valid.required  {
+  border-left: 5px solid #93D6FF;
+  border-left: 5px solid #93D6FF;
+}
+
+.ng-invalid:not(form)  {
+  border-left: 5px solid #009DFF;
+  border-right: 5px solid #009DFF;
+}
+
+.no-style .ng-valid {
+  border-left: 1px  solid #93D6FF
+}
+
+h2, h3, h4 {
+  text-shadow: 2px 3px #11396b;
+  text-align: center;
   color: #fff;
+  font-family: sans-serif, Arial, Helvetica;
+  margin: 1.5em;
+}
+
+body, input[text] {
+  color: #11396b;
+  font-family: sans-serif, Georgia;
+}
+
+button {
+  /* margin: 20px; */
+  background-color: #3e5f789c;
+  color: #F1FAFF;
+  font-family: Arial;
   border-radius: 5px;
+  border: none;
+  width: 250px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5px 10px;
+  cursor: pointer;
+  cursor: hand;
+}
+button:hover {
+  background-color: #19539B;
+}
+
+button:disabled {
+  background-color: #eee;
+  color: #11396b;
+  cursor: auto;
 }

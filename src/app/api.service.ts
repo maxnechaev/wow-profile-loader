@@ -2,14 +2,12 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { EMPTY, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { NgForm } from '@angular/forms';
 
 @Injectable({ providedIn: 'root' })
 
 export class ApiService {
 
   data: any = {};
-  submitObj: any = {};
 
   constructor(private http: HttpClient) { }
 
@@ -30,9 +28,6 @@ export class ApiService {
       })
   }
 
-  onSubmit(form : NgForm) {
-    this.submitObj = form.value.region;
-    console.log('value', form.value.region);
-   } 
+
 
 }
