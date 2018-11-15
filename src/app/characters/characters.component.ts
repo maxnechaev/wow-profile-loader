@@ -11,7 +11,20 @@ export class CharactersComponent implements OnInit {
 
   @Input() character;
 
-  blizzUrl = 'https://eu.api.blizzard.com/wow/user/characters?access_token=USYGuPjU8c801TfUhVg1dQM5ghYFr1BVCR';
+  httpOptions = {
+    region: 'eu', // manually change the game server to yours
+    access_token: 'USYGuPjU8c801TfUhVg1dQM5ghYFr1BVCR', //change this line with your token in order to reach your profile
+    apiPath: '/wow/user/characters',
+    myURL: '/',
+    ipUrl: 'https://jsonip.com',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    json: true,
+    optionsSuccessStatus: 200,
+  };
+
+  blizzUrl = `https://${this.httpOptions.region}.api.blizzard.com${this.httpOptions.apiPath}?access_token=${this.httpOptions.access_token}`
 
   selectedCharacter;
   onSelect(character): void {

@@ -20,25 +20,6 @@ body {
   font-family: sans-serif, Arial, Helvetica;
 }
 
-.authorization {
-  margin: 10px;
-  padding: 10px;
-}
-
-section {
-  margin-bottom: 2em;
-  text-align: center;
-}
-
-input {
-  border-radius: 5px;
-}
-
-.auth-btn {
-  background-color: #3e5f789c;
-  color: #fff;
-  border-radius: 5px;
-}
 
 footer {
   font-size: 10px;

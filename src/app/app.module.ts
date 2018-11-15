@@ -8,7 +8,7 @@ import { OAuthModule } from 'angular-oauth2-oidc';
 import { AppComponent } from './app.component';
 import { CharactersComponent } from './characters/characters.component';
 import { CharacterDetailComponent } from './character-detail/character-detail.component';
-import { GameServersComponent } from './gameServers/gameServers.component';
+import { RegionsComponent } from './regions/regions.component';
 import { ClassDescriptionComponent } from './class-description/class-description.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -17,9 +17,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppComponent,
     CharactersComponent,
     CharacterDetailComponent,
-    GameServersComponent,
+    RegionsComponent,
     ClassDescriptionComponent,
-    // HomeComponent,
   ],
   imports: [
     BrowserModule,

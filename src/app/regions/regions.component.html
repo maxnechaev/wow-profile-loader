@@ -1,0 +1,41 @@
+<section>
+  <form class="" (ngSubmit)="onSubmit(f)" #f="ngForm" method="POST">
+
+    <div class="d-flex justify-content-between">
+      <input
+        class="authorization
+        form-control col-md-6"
+        type="text"
+        name="battleNetId"
+        placeholder="your BattleNet Id..."
+        ngModel
+        required>
+
+      <select
+        class="authorization form-control col-md-6"
+        name="region"
+        [(ngModel)]="selectedRegion"
+        required>
+
+        <option selected disabled>
+          Choose your Game Server
+        </option>
+
+        <option *ngFor="let region of regions" [ngValue]="region.value">
+          {{region.name}}
+        </option>
+
+      </select>
+
+    </div>
+
+    <input
+      class="auth-btn col-md-4"
+      type="submit"
+      value="Authorize"
+      data-toggle="tooltip"
+      data-trigger="hover"
+      data-placement="top"
+      title="Authorize using Blizzard OAuth">
+  </form>
+</section>

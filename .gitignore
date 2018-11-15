@@ -2,6 +2,11 @@
 .env
 secrets.js
 credentials.json
+app.js
+src/app/authentication.service.spec.ts
+src/app/authentication.service.ts
+
+
 
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 

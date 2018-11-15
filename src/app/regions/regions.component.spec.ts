@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GameServersComponent } from './gameServers.component';
+import { RegionsComponent } from './regions.component';
 
-describe('GameServersComponent', () => {
-  let component: GameServersComponent;
-  let fixture: ComponentFixture<GameServersComponent>;
+describe('RegionsComponent', () => {
+  let component: RegionsComponent;
+  let fixture: ComponentFixture<RegionsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ GameServersComponent ]
+      declarations: [ RegionsComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(GameServersComponent);
+    fixture = TestBed.createComponent(RegionsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -22,4 +22,4 @@ describe('GameServersComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-});
+})
