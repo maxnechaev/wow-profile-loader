@@ -5,6 +5,13 @@ A light-weight app that allows you to see your World of Warcraft characters, the
 The project is done on [Angular CLI](https://github.com/angular/angular-cli) version 6.2.5 with use of Blizzard APIs.
 
 
+## Screenshots
+
+!["wow-profile-loader"](https://github.com/maxnechaev/wow-profile-loader/blob/master/src/assets/screenshots/scrn_1.png)
+
+!["wow-profile-loader"](https://github.com/maxnechaev/wow-profile-loader/blob/master/src/assets/screenshots/scrn_2.png)
+
+
 ## Installation
 
 Run `npm i` or `npm install` to install the dependencies from package.json.
