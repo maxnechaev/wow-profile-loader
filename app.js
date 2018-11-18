@@ -3,11 +3,11 @@ const path = require ('path');
 
 const app = express();
 
-app use(express.static('dist/wow-profile-loader'));
+app.use(express.static('dist/wow-profile-loader'));
 
 app.get('/*', (req, res) => {
   res.sendFile(path.join(_dirname, '/dist/wow-profile-loader/src/index.html'));
-  app.listen(process.env.PORT || 8080, () => {
+  app.listen(process.env.PORT || port, () => {
     console.log('Server is started on port ', PORT);
   })
 })
