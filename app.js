@@ -1,4 +1,16 @@
+const express = require('express');
+const path = require ('path');
 
+const app = express();
+
+app use(express.static('dist/wow-profile-loader'));
+
+app.get('/*', (req, res) => {
+  res.sendFile(path.join(_dirname, '/dist/wow-profile-loader/src/index.html'));
+  app.listen(process.env.PORT || 8080, () => {
+    console.log('Server is started on port ', PORT);
+  })
+})
 // /*
 // HTTPS is required in order for Battle.net to reply to your server with a value token, so if you have
 // no SSL certificate you will not be able to use this or any other library.

@@ -8,10 +8,14 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "nodemon": "npx nodemon app.js"
+    "nodemon": "npx nodemon app.js",
+    "postinstall": "ng build --prod"
   },
   "private": true,
   "dependencies": {
+    "@angular-devkit/build-angular": "~0.8.0",
+    "@angular/cli": "~6.2.5",
+    "@angular/compiler-cli": "^6.1.0",
     "@angular/animations": "^6.1.0",
     "@angular/cdk": "~7.0.3",
     "@angular/common": "^6.1.0",
@@ -45,12 +49,11 @@
     "request-promise": "^4.2.2",
     "rxjs": "^6.3.3",
     "serve-favicon": "^2.5.0",
+    "typescript": "^2.9.2",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.8.0",
-    "@angular/cli": "~6.2.5",
-    "@angular/compiler-cli": "^6.1.0",
     "@angular/language-service": "^6.1.0",
     "@types/cors": "^2.8.4",
     "@types/jasmine": "~2.8.8",
@@ -68,6 +71,10 @@
     "ts-node": "~7.0.0",
     "tslint": "~5.11.0",
     "typescript": "^2.9.2"
+  },
+  "engines": {
+    "node": "10.4.1",
+    "npm": "6.4.1"
   },
   "browser": {
     "http": true,

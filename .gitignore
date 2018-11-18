@@ -2,7 +2,6 @@
 .env
 secrets.js
 credentials.json
-app.js
 src/app/authentication.service.spec.ts
 src/app/authentication.service.ts
 

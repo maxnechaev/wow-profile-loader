@@ -31,7 +31,7 @@ export class CharactersComponent implements OnInit {
     this.selectedCharacter = character;
   }
 
-  constructor(private api: ApiService) { }
+  constructor(public api: ApiService) { }
 
   ngOnInit() {
     this.api.getData(this.blizzUrl)
